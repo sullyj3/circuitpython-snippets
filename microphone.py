@@ -1,3 +1,7 @@
+''' Turns a circuit playground into an audio level meter. Hold the A button to
+    calibrate the meter. The loudest thing heard while calibrating will become
+    a 9 on the pixel scale, and the quietest level will become a 1. '''
+
 import time
 from adafruit_circuitplayground import cp
 from math import log
@@ -8,12 +12,6 @@ def clamp(a, b, x):
 
 def ab_log10(a, b, x):
   return a * log(b * x, 10)
-
-'''
-def transfer(x, a, b):
-  return clamp(0,10, round())
- 
-'''
 
 ''' given two points, calculate a new log10 transfer function '''
 def calculate_transfer_function(pt_min, pt_max):
