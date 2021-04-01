@@ -75,7 +75,6 @@ def main():
         transfer = calculate_transfer_function((calibrate_min, 1), (calibrate_max, 9))
         mode = MIC
 
-    time.sleep(0.01)
 
 if __name__ == '__main__':
   print("Starting mic")
